@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Mehdi Azabou">
+    <meta name="author" content="Mehdi Azabou">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BAMS</title>
+    <link rel="shortcut icon" href="assets/🧠.ico" />
+    <script src="https://kit.fontawesome.com/3875b07657.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://bulma.io/css/bulma-docs.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<!--    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMP0QT1S6Z"></script>-->
+<!--    <script>-->
+<!--        window.dataLayer = window.dataLayer || [];-->
+<!--        function gtag(){dataLayer.push(arguments);}-->
+<!--        gtag('js', new Date());-->
+
+<!--        gtag('config', 'G-SMP0QT1S6Z', {-->
+<!--            'page_path': '/index.html'-->
+<!--        });-->
+<!--    </script>-->
+<script>
+    function resizeIframe(obj) {
+      obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+    }
+  </script>
+</head>
+<body>
+
+<section class="section">
+    <div>
+    <h1 class="paper">
+        Relax, it doesn't matter how you get there: A new <span>self-supervised</span> approach for multi-timescale behavior analysis
+    </h1>
+    </div>
+    <div class="header authors">
+        <a href="www.mehai.dev">Mehdi Azabou</a><sup>1</sup>
+        <a href=""> Michael Mendelson</a><sup>1</sup>
+        <a href=""> Nauman Ahad</a><sup>1</sup>
+        <a href="www.initmaks.com">Maks Sorokin</a><sup>1</sup>
+        <a href="">Shantanu Thakoor</a><sup>2</sup>
+        <a href="">Carolina Urzay</a><sup>1</sup>
+        <a href="">Eva L. Dyer</a><sup>1,3</sup>
+    </div>
+    <div class="affiliations">
+        <sup>1</sup>Georgia Institute of Technology, <sup>2</sup>Deepmind, <sup>3</sup>Emory University
+    </div>
+    <div class="links">
+        <a href="https://arxiv.org/pdf/2303.08811">
+            <i class="fa fa-file"></i> <br>
+            Paper
+        </a>
+        <a href="https://github.com/nerdslab/bams">
+            <i class="fa fa-github"></i> <br>
+            Code
+        </a>
+        <!-- <a href="https://github.com/nerdslab/myow">
+            <i class="fa fa-book"></i> <br>
+            Docs
+        </a> -->
+        <!--
+        <a href="">
+            <img src="imgs/colab_logo.png" style="width: 35px;"/> <br/>
+            Colab
+        </a>
+        -->
+        <a href="https://arxiv.org/abs/2303.08811">
+            <i class="ai ai-arxiv"></i> <br>
+            Arxiv
+        </a>
+    <!--    <a href="">-->
+    <!--        <i class="ai ai-obp"></i> <br>-->
+    <!--        Citation-->
+    <!--    </a>-->
+    
+    </div>
+
+
+</section>
+
+<!-- <section class="section">
+    <h3 class="section-title">
+        Abstract
+    </h3>
+    <div>
+        Natural behavior consists of dynamics that are complex and unpredictable,
+    especially when trying to predict many steps into the future. While some success
+    has been found in building representations of behavior under constrained or
+    simplified task-based conditions, many of these models cannot be applied to free and naturalistic settings
+    where behavior becomes increasingly hard to model. In this work, we develop a multi-task representation
+    learning model for behavior that combines two novel components: (i) An action prediction objective that
+    aims to predict the distribution of actions over future timesteps, and (ii) A multi-scale architecture
+    that builds separate latent spaces to accommodate short- and long-term dynamics. After demonstrating the
+    ability of the method to build representations of both local and global dynamics in realistic robots in
+    varying environments and terrains, we apply our method to the MABe 2022 Multi-agent behavior challenge,
+    where our model ranks 1st overall and on all global tasks, and 1st on 4 out of 9 frame-level subtasks.
+    In all of these cases, we show that our model can build representations that capture the many different
+    factors that drive behavior and solve a wide range of downstream tasks.
+    </div>
+</section> -->
+
+
+
+<section class="section">
+    <h3 class="section-title">
+        Introduction
+    </h3>
+    <p>
+    Studying the dynamics of behavior data, especially in complex and naturalistic behavior, provides rich information about movement and decision making that can be used to build insights into the link between the brain and behavior.
+    </p>
+    <p class="question">
+    &#8594 Can we build models that can capture the dynamics of behavior, and help us derive insights from the data?
+    </p>
+    <p class="question">
+    &#8594 Can we leverage self-supervised learning to process large amounts of high-dimensional noisy behavior data, without relying on annotations?
+    </p>
+
+    <p>
+    We introduce a novel self-supervised learning framework called BAMS trained to predict the next action(s). BAMS is equiped with two latent spaces, the first captures the short-term dynamics, the second captures the long-term embeddings.
+    </p>
+
+    <p>
+        We apply BAMS to:
+    </p>
+    <p>
+    🐭  <b>-</b> Mouse triplets: Our model ranks 1st overall in the MABe 2022 Multi-agent behavior challenge.
+    </p>
+    <p>
+    🤖 <b>-</b> Simulated legged robots traversing different terrains: We introduce a new dataset generated from a heterogeneous population of
+    quadrupeds traversing different terrains. 
+    </p>
+    <p>
+    🎰 <b>-</b>  Humans playing.
+    </p>
+
+
+    <h3 class="section-title">
+        Studying interacting mice
+    </h3>
+    <h3 class="subsection-title">
+        Data
+    </h3>
+    <p>
+    The mouse triplet dataset is part of the Multi-Agent Behavior Challenge (MABe 2022). It consists of a set of trajectories from three mice interacting in an open-field arena. 
+    The recorded videos are processed to extract pose estimations and tracking data. We use these features as the input to our model.
+     </p>   
+     <p>Below, we show a sample sequence.</p>
+    <div align="center">
+        <iframe src="visualization_feats_5.html" height="360" width="1000" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+    </div>
+    <p>
+    Note that the data is noisy, contains missing values and identity swaps. This is representative of the real-world data we are interested in studying.
+</p> 
+
+    <h3 class="subsection-title">
+        Visualizing the embedding spaces
+    </h3>
+    <p>
+    We use the learned embedding spaces to visualize the dynamics of the behavior. We show the embedding space of the first latent space (short-term dynamics) and the second latent space (long-term dynamics).
+    </p>
+    <div align="center">
+        <iframe src="visualization_strain_5.html" height="360" width="1000" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+    </div>
+
+    <p>
+    There are two things we can note here:
+    </p>
+    <p>
+        <b>-</b> The long-term embedding is able to capture the different strains of mice. This is important because it shows that the behavior of the mice is not only driven by the environment, but also by their genetic background.
+    </p><p>
+        <b>-</b> While the long-term embedding quickly converges to a small region of the space, we can see more variability in the short-term embedding. This is expected because the short-term dynamics are used to capture momentary behavior like interactions between the mice.
+    </p>
+
+    <p>
+        We visualize the embeddings again but we use the lights on/off to color the points.
+    </p>
+    <div align="center">
+        <iframe src="visualization_lights_5.html" height="360" width="1000" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+    </div>
+    <p>
+        <b>-</b> We can see that the long-term embedding is able to capture the effect of the lights on the behavior of the mice. This confirms what we know about mice being more active during the night and less active during the day.
+    </p>
+    <p>
+        <b>-</b> Interestingly, we find that the light condition is encoded along the first PC, while the mouse strain is encoded along the second PC.
+    </p>
+
+</section>
+
+<section class="section">
+If you find this useful for your research, please consider citing our work:
+
+<div class="citation">
+<pre><code>@misc{azabou2023relax,
+    doi = {10.48550/ARXIV.2303.08811},
+    url = {https://arxiv.org/abs/2303.08811},
+    author = {Azabou, Mehdi and Mendelson, Michael and Ahad, Nauman and Sorokin, Maks and Thakoor, Shantanu and Urzay, Carolina and Dyer, Eva L.},
+    title = {Relax, it doesn't matter how you get there: A new self-supervised approach for multi-timescale behavior analysis},
+    publisher = {arXiv},
+    year = {2023}}</code></pre>
+</div>
+</section>
+
+
+
+
+<!-- 
+<footer class="footer">
+    <div class="section content">
+
+        <div style="font-size: 1em;">NerDS Lab</div>
+    </div>
+</footer> -->
+
+</body>
+</html>

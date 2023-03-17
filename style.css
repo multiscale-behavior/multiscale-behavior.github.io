@@ -1,0 +1,81 @@
+
+iframe {
+    display: block;
+    border-style:none;
+}
+
+.section{
+    max-width:70em;
+    margin: auto;
+    padding-top: 2rem;
+    padding-bottom: 0.1rem;
+}
+
+.paper {
+    text-align: center;
+    font-size:1.5rem;
+    padding-bottom: 0.5em;
+    margin: auto;
+    max-width: 30em;
+    font-weight: bold;
+}
+
+.authors {
+    text-align: center;
+    margin: auto;
+    max-width: 50em;
+}
+
+.authors a {
+    display: inline-block;
+    font-size: 18px;
+    padding: 2px;
+    padding-left: 10px;
+}
+
+.affiliations {
+    text-align: center;
+    max-width: 50em;
+    margin: auto;
+    font-size: 15px;
+    padding-top: 0.1em;
+}
+
+.links {
+    text-align: center;
+    padding-top: 2em;
+    margin-bottom: 30px;
+}
+.links a {
+    display: inline-block;
+    font-weight: bold;
+    padding: 0px 20px 0px 20px;
+}
+.links i { font-size: 30px; }
+
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-top: 0.4em;
+    padding-bottom: 0.2em;
+}
+
+.subsection-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-bottom: 0.2em;
+}
+
+
+.citation{
+    margin: 1em;
+}
+
+.section p {
+    padding-bottom: 0.4em;
+}
+
+.question {
+    font-weight: bold;
+}
