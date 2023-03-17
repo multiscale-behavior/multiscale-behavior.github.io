@@ -74,6 +74,22 @@ iframe {
     padding-bottom: 0.5em;
 }
 
+.table-of-contents {
+    background-color: #f2f2f2; 
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.table-of-contents a:link {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
 
 .citation{
     margin: 1em;
