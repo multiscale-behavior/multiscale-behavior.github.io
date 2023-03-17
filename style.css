@@ -83,7 +83,7 @@ iframe {
     padding-bottom: 20px;
 }
 
-.table-of-contents a:link {
+.table-of-contents p {
     font-size: 18px;
     font-weight: bold;
     color: black;
