@@ -128,7 +128,7 @@
     <div style="background-color: #f2f2f2; padding: 10px;">
         <h2>Table of Contents</h2>
         <ul>
-          <li><a href="#section1">🐭 Mouse triplets</a>: Our model ranks 🏆 1st overall in the MABe 2022 Multi-agent behavior challenge.</li>
+          <li><a href="#mice">🐭 Mouse triplets</a>: Our model ranks 🏆 1st overall in the MABe 2022 Multi-agent behavior challenge.</li>
           <li><a href="#section2">🤖 Simulated legged robots traversing different terrains</a>: We introduce a new dataset generated from a heterogeneous population of
             quadrupeds traversing different terrains.</li>
           <li><a href="#section3">🎰 Humans decision making</a>: Learning signatures of decision making from many individuals playing the same game.</li>
@@ -139,7 +139,7 @@
     <img src="static/bams_overview.png" style="width: 90%;"/>
     </div> -->
     <h3 class="section-title">
-        Studying interacting mice
+        <a href=""> </a>Studying interacting mice
     </h3>
     <h3 class="subsection-title">
         Data
@@ -150,7 +150,8 @@
      </p>   
      <p>Below, we show a sample sequence.</p>
     <div align="center">
-        <iframe src="visualization_feats_5.html" height="360" width="1000" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+        <iframe src="visualization_feats_5.html" height="350" width="1000" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+        <p class="caption-a">Figure 1: Visualization of the pose data for a sample recording clip.</p>
     </div>
     <p>
     Note that the data is noisy, contains missing values and identity swaps. This is representative of the real-world data we are interested in studying.
@@ -160,15 +161,30 @@
     Results
 </h3>
 
+<p>
+To evaluate the quality of the learned representation, we use a set of 13 readout tasks that are designed after a wide range behavioral analysis tasks. 
+We freeze the learned embedding and for each task, train a single linear layer on top of the embedding. A good performance indicates that the label is linearly decodable from the learned embedding space, suggesting that the model is able to capture these factors that we know are important.
+</p>
+
+<p>
+We report the results for our model and other models below. Our model ranks first in the overall challenge and on all global tasks 
+<a href="https://www.aicrowd.com/challenges/multi-agent-behavior-challenge-2022/problems/mabe-2022-mouse-triplets/leaderboards?challenge_leaderboard_extra_id=1049&challenge_round_id=1148&post_challenge=true">Leaderboard</a>. 
+</p>
 <div>
-    <iframe src="mabe_results.html" height="440" width="100%" frameborder="0" onload="resizeIframe(this)"></iframe>
+    <iframe src="mabe_results.html" height="420" width="100%" frameborder="0" onload="resizeIframe(this)"></iframe>
+    <p class="caption-b">Figure 2: Linear evaluation results.</p>
 </div>
+
+<h3 class="subsection-title">
+    Visualizing the embedding spaces
+</h3>
 
     <p>
     We use the learned embedding spaces to visualize the dynamics of the behavior. We show the embedding space of the first latent space (short-term dynamics) and the second latent space (long-term dynamics).
     </p>
     <div align="center">
-        <iframe src="visualization_strain_5.html" height="360" width="1000" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+        <iframe src="visualization_strain_5.html" height="350" width="1000" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+        <p class="caption-a">Figure 3: Projection of the embeddings using PCA after normalization.</p>
     </div>
 
     <p>
@@ -184,7 +200,9 @@
         We visualize the embeddings again but we use the lights on/off to color the points.
     </p>
     <div align="center">
-        <iframe src="visualization_lights_5.html" height="360" width="1000" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+        <iframe src="visualization_lights_5.html" height="350" width="1000" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+        <p class="caption-a">Figure 4: Projection of the embeddings using PCA after normalization.</p>
+
     </div>
     <p>
         <b>-</b> We can see that the long-term embedding is able to capture the effect of the lights on the behavior of the mice. This confirms what we know about mice being more active during the night and less active during the day.
@@ -192,6 +210,36 @@
     <p>
         <b>-</b> Interestingly, we find that the light condition is encoded along the first PC, while the mouse strain is encoded along the second PC.
     </p>
+
+    <h3 class="section-title">
+        Studying simulated legged robots
+    </h3>
+
+    <p>To test our model's ability to separate behavioral factors that vary in complexity and contain distinct
+        multi-timescale dynamics, we introduce a new dataset generated from a heterogeneous population of
+        quadrupeds traversing different terrains.</p>
+
+    <p> We use the NVIDIA's <a href="https://developer.nvidia.com/isaac-gym">Isaac Gym simulator</a>. We use two robots that differ by their morphology, ANYmal B and ANYmal C. To
+        create heterogeneity in the population, we randomize the body mass of the robot as well as the target
+        traversal velocity. We track a set of 24 proprioceptive features including linear and angular velocities
+        of the robots' joints.</p>
+
+
+    <div class="figure" align="center">
+        <img src = "robots_overview.svg" width="800px" alt="Sketch of robots walking on different terrains."/>
+        <p class="caption">Figure 5: Sketch of robots walking on different terrains.</p>
+    </div>
+
+
+    <p class="question">
+        &#8594 Why this dataset?
+    </p>
+    <p>Simulation-based data collection enables access to information that is generally
+        inaccessible or hard to acquire in a real-world setting. Unlike noisy measurements coming from the
+        camera-based feature extractor in the case of the mouse dataset, physics engines do not suffer from
+        the problem of noise. Instead, they provide accurate ground-truth information about the creature and
+        the world state free of charge. Access to such information is at times critical for scrutinizing the
+        capabilities of the learning algorithms.</p>
 
 </section>
 
