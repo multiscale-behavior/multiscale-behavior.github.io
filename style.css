@@ -11,14 +11,36 @@ iframe {
     padding-bottom: 0.1rem;
 }
 
-.paper {
+.page-title {
     text-align: center;
     font-size:1.5rem;
-    padding-bottom: 0.5em;
-    margin: auto;
-    max-width: 30em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    max-width: 70em;
     font-weight: bold;
 }
+
+h1.page-title {
+    padding-bottom: 0em;
+    margin-bottom: 0.1em;
+}
+
+h2.page-title  {
+    padding-top: 0em;
+    font-size:1.9rem;
+    font-weight: normal;
+    padding-bottom: 0.5em;
+}
+
+.rainbow {
+    background: linear-gradient(to right,  #8B00FF, #FF0000, #FF7F00, #e3e383, #00FF00, #0000FF, #4B0082, #8B00FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0s ease-in-out;
+  }
+  
 
 .authors {
     text-align: center;
@@ -43,27 +65,28 @@ iframe {
 
 .links {
     text-align: center;
-    padding-top: 2em;
-    margin-bottom: 30px;
+    padding-top: 1em;
 }
+
 .links a {
     display: inline-block;
     font-weight: bold;
     padding: 0px 20px 0px 20px;
 }
-.links i { font-size: 30px; }
+.links i { font-size: 20px; }
 
 
 .section-title {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.5em;
+    font-weight: normal;
     padding-top: 0.4em;
-    padding-bottom: 0.2em;
+    border-bottom: 2px solid rgb(211, 211, 211);
+    margin-bottom: 0.5em;
 }
 
 .subsection-title {
     font-size: 1.3rem;
-    font-weight: bold;
+    font-weight: normal;
     padding-bottom: 0.2em;
 }
 
@@ -104,19 +127,22 @@ iframe {
 
 .table-of-contents {
     background-color: #f2f2f2; 
+    max-width:70em;
+    margin-top:1em;
     padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
-.table-of-contents p {
-    font-size: 18px;
+.table-of-contents a {
     font-weight: bold;
-    color: black;
     background-color: transparent;
     text-decoration: none;
+}
+
+.table-of-contents h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
 }
 
 .citation{
@@ -129,4 +155,8 @@ iframe {
 
 .question {
     font-weight: bold;
+}
+
+.nowrap {
+    white-space: nowrap;
 }

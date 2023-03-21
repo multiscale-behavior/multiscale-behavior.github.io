@@ -35,16 +35,19 @@
 
 <section class="section">
     <div>
-    <h1 class="paper">
-        Relax, it doesn't matter how you get there: A new <span>self-supervised</span> approach for multi-timescale behavior analysis
+    <h1 class="page-title">
+        Relax, it doesn't matter how you get there 
     </h1>
+    <h2 class="title page-title">
+        A new <span>self-supervised</span> approach for <span class="rainbow nowrap" id="rainbow" style="font-weight:600;">multi-timescale behavior</span> analysis
+    </h2>
     </div>
     <div class="header authors">
         <a href="https://www.mehai.dev">Mehdi Azabou</a><sup>1</sup>
         <a href="https://dyerlab.gatech.edu/"> Michael Mendelson</a><sup>1</sup>
-        <a href=""> Nauman Ahad</a><sup>1</sup>
+        <a href="https://www.gatech.edu/"> Nauman Ahad</a><sup>1</sup>
         <a href="https://www.initmaks.com">Maks Sorokin</a><sup>1</sup>
-        <a href="">Shantanu Thakoor</a><sup>2</sup>
+        <a href="https://www.deepmind.com/">Shantanu Thakoor</a><sup>2</sup>
         <a href="https://dyerlab.gatech.edu/">Carolina Urzay</a><sup>1</sup>
         <a href="https://dyerlab.gatech.edu/">Eva L. Dyer</a><sup>1,3</sup>
     </div>
@@ -53,11 +56,10 @@
     </div>
     <div class="links">
         <a href="https://arxiv.org/pdf/2303.08811">
-            <i class="fa fa-file"></i> <br>
-            Paper
+            <i class="fa fa-file"></i> Paper
         </a>
         <a href="https://github.com/nerdslab/bams">
-            <i class="fa fa-github"></i> <br>
+            <i class="fa fa-github"></i> 
             Code
         </a>
         <!-- <a href="https://github.com/nerdslab/myow">
@@ -70,10 +72,10 @@
             Colab
         </a>
         -->
-        <a href="https://arxiv.org/abs/2303.08811">
-            <i class="ai ai-arxiv"></i> <br>
+        <!-- <a href="https://arxiv.org/abs/2303.08811">
+            <i class="ai ai-arxiv"></i> 
             Arxiv
-        </a>
+        </a> -->
     <!--    <a href="">-->
     <!--        <i class="ai ai-obp"></i> <br>-->
     <!--        Citation-->
@@ -83,28 +85,6 @@
 
 
 </section>
-
-<!-- <section class="section">
-    <h3 class="section-title">
-        Abstract
-    </h3>
-    <div>
-        Natural behavior consists of dynamics that are complex and unpredictable,
-    especially when trying to predict many steps into the future. While some success
-    has been found in building representations of behavior under constrained or
-    simplified task-based conditions, many of these models cannot be applied to free and naturalistic settings
-    where behavior becomes increasingly hard to model. In this work, we develop a multi-task representation
-    learning model for behavior that combines two novel components: (i) An action prediction objective that
-    aims to predict the distribution of actions over future timesteps, and (ii) A multi-scale architecture
-    that builds separate latent spaces to accommodate short- and long-term dynamics. After demonstrating the
-    ability of the method to build representations of both local and global dynamics in realistic robots in
-    varying environments and terrains, we apply our method to the MABe 2022 Multi-agent behavior challenge,
-    where our model ranks 1st overall and on all global tasks, and 1st on 4 out of 9 frame-level subtasks.
-    In all of these cases, we show that our model can build representations that capture the many different
-    factors that drive behavior and solve a wide range of downstream tasks.
-    </div>
-</section> -->
-
 
 
 <section class="section">
@@ -125,27 +105,29 @@
     We introduce a novel self-supervised learning framework called BAMS trained to predict the next action(s). BAMS is equiped with two latent spaces, the first captures the short-term dynamics, the second captures the long-term embeddings.
     </p>
 
-    <div style="background-color: #f2f2f2; padding: 10px;">
+    <div class="table-of-contents">
         <h2>Table of Contents</h2>
         <ul>
-          <li><a href="#mice">🐭 Mouse triplets</a>: Our model ranks 🏆 1st overall in the MABe 2022 Multi-agent behavior challenge.</li>
-          <li><a href="#section2">🤖 Simulated legged robots traversing different terrains</a>: We introduce a new dataset generated from a heterogeneous population of
+          <li><a href="#mice">🐭 Mouse triplets</a>: Our model ranks 🏆 1st overall in the MABe 2022 Multi-agent behavior benchmark.</li>
+          <li><a href="#robots">🤖 Simulated legged robots</a>: We introduce a new dataset of a heterogeneous population of
             quadrupeds traversing different terrains.</li>
-          <li><a href="#section3">🎰 Humans decision making</a>: Learning signatures of decision making from many individuals playing the same game.</li>
+          <li><a href="#bandit">🎰 Humans decision making</a>: Learning signatures of decision making from many individuals playing the same game.</li>
         </ul>
-      </div>
+    </div>
+</section>
 
+<section class="section" id="mice">
     <!-- <div class="figure">
     <img src="static/bams_overview.png" style="width: 90%;"/>
     </div> -->
     <h3 class="section-title">
-        <a href=""> </a>Studying interacting mice
+        <a href=""> </a>🐭 Studying interacting mice
     </h3>
     <h3 class="subsection-title">
-        Data
+        Dataset
     </h3>
     <p>
-    The mouse triplet dataset is part of the Multi-Agent Behavior Challenge (MABe 2022). It consists of a set of trajectories from three mice interacting in an open-field arena. 
+    The mouse triplet dataset (<a href="https://data.caltech.edu/records/8kdn3-95j37">Link</a>) is part of the Multi-Agent Behavior Challenge (MABe 2022). It consists of a set of trajectories from three mice interacting in an open-field arena. 
     The recorded videos are processed to extract pose estimations and tracking data. We use these features as the input to our model.
      </p>   
      <p>Below, we show a sample sequence.</p>
@@ -154,8 +136,9 @@
         <p class="caption-a">Figure 1: Visualization of the pose data for a sample recording clip.</p>
     </div>
     <p>
-    Note that the data is noisy, contains missing values and identity swaps. This is representative of the real-world data we are interested in studying.
+    Note that the data is noisy, contains missing values and frequent identity swap issues. This is representative of the real-world data we are interested in studying.
 </p> 
+
 
 <h3 class="subsection-title">
     Results
@@ -163,12 +146,17 @@
 
 <p>
 To evaluate the quality of the learned representation, we use a set of 13 readout tasks that are designed after a wide range behavioral analysis tasks. 
-We freeze the learned embedding and for each task, train a single linear layer on top of the embedding. A good performance indicates that the label is linearly decodable from the learned embedding space, suggesting that the model is able to capture these factors that we know are important.
+</p>
+
+<p>
+The model produces a d-dimensional represenation, to readout the desired label, we freeze the representation and train a single linear layer on top of the embedding. 
+A good performance indicates that the label is linearly decodable from the learned embedding space, 
+suggesting that the model is able to capture these factors that are known to be important.
 </p>
 
 <p>
 We report the results for our model and other models below. Our model ranks first in the overall challenge and on all global tasks 
-<a href="https://www.aicrowd.com/challenges/multi-agent-behavior-challenge-2022/problems/mabe-2022-mouse-triplets/leaderboards?challenge_leaderboard_extra_id=1049&challenge_round_id=1148&post_challenge=true">Leaderboard</a>. 
+<a href="https://www.aicrowd.com/challenges/multi-agent-behavior-challenge-2022/problems/mabe-2022-mouse-triplets/leaderboards?challenge_leaderboard_extra_id=1049&challenge_round_id=1148&post_challenge=true">Link to Leaderboard</a>. 
 </p>
 <div>
     <iframe src="mabe_results.html" height="420" width="100%" frameborder="0" onload="resizeIframe(this)"></iframe>
@@ -210,9 +198,10 @@ We report the results for our model and other models below. Our model ranks firs
     <p>
         <b>-</b> Interestingly, we find that the light condition is encoded along the first PC, while the mouse strain is encoded along the second PC.
     </p>
-
+</section>
+<section class="section" id="robots">
     <h3 class="section-title">
-        Studying simulated legged robots
+        🤖 Studying simulated legged robots
     </h3>
 
     <p>To test our model's ability to separate behavioral factors that vary in complexity and contain distinct
@@ -243,18 +232,37 @@ We report the results for our model and other models below. Our model ranks firs
 
 </section>
 
+<section class="section" id="bandit">
+    <h3 class="section-title">
+        🎰 Studying human decision making
+    </h3>
+    BAMS is also applicable to human decision making. Our <a href="https://arxiv.org/abs/2302.11023">work </a> will appear at the 11th International IEEE EMBS Conference on Neural Engineering (NER'23), Baltimore, Maryland, April 2023.
+</section>
+
+
+
 <section class="section">
 If you find this useful for your research, please consider citing our work:
 
 <div class="citation">
 <pre><code>@misc{azabou2023relax,
-    doi = {10.48550/ARXIV.2303.08811},
-    url = {https://arxiv.org/abs/2303.08811},
-    author = {Azabou, Mehdi and Mendelson, Michael and Ahad, Nauman and Sorokin, Maks and Thakoor, Shantanu and Urzay, Carolina and Dyer, Eva L.},
-    title = {Relax, it doesn't matter how you get there: A new self-supervised approach for multi-timescale behavior analysis},
-    publisher = {arXiv},
-    year = {2023}}</code></pre>
+      doi = {10.48550/ARXIV.2303.08811},
+      url = {https://arxiv.org/abs/2303.08811},
+      author = {Azabou, Mehdi and Mendelson, Michael and Ahad, Nauman and Sorokin, Maks and Thakoor, Shantanu and Urzay, Carolina and Dyer, Eva L.},
+      title = {Relax, it doesn't matter how you get there: A new self-supervised approach for multi-timescale behavior analysis},
+      publisher = {arXiv},
+      year = {2023}}</code></pre>
 </div>
+
+<div class="citation">
+    <pre><code>@misc{mendelson2023,
+      doi = {10.48550/ARXIV.2302.11023},
+      url = {https://arxiv.org/abs/2302.11023},
+      author = {Mendelson, Michael J and Azabou, Mehdi and Jacob, Suma and Grissom, Nicola and Darrow, David and Ebitz, Becket and Herman, Alexander and Dyer, Eva L.},
+      title = {Learning signatures of decision making from many individuals playing the same game},
+      publisher = {arXiv},
+      year = {2023}}</code></pre>
+    </div>
 </section>
 
 
@@ -267,6 +275,21 @@ If you find this useful for your research, please consider citing our work:
         <div style="font-size: 1em;">NerDS Lab</div>
     </div>
 </footer> -->
+  <script>
+var rainbow = document.querySelector(".rainbow");
+var rainbowGradient = window.getComputedStyle(rainbow).backgroundImage;
 
+document.addEventListener("mousemove", function(e) {
+  var rect = rainbow.getBoundingClientRect();
+  var x = e.clientX;
+  var y = e.clientY;
+  var isUnder = ((x + 50) >= rect.left && (x - 50) <= rect.right);
+  if (isUnder) {
+    rainbow.style.backgroundImage = rainbowGradient;
+  rainbow.style.backgroundPosition = x + "px " + y + "px";
+  }
+});
+
+  </script>
 </body>
 </html>
