@@ -55,7 +55,7 @@
         <sup>1</sup> Georgia Institute of Technology, <sup>2</sup> DeepMind, <sup>3</sup> Emory University
     </div>
     <div class="links">
-        <a href="https://arxiv.org/pdf/2303.08811">
+        <a href="https://openreview.net/pdf?id=RInTOCEL3l">
             <i class="fa fa-file"></i> Paper
         </a>
         <a href="https://github.com/nerdslab/bams">
@@ -108,7 +108,8 @@
     <div class="table-of-contents">
         <h2>Table of Contents</h2>
         <ul>
-          <li><a href="#mice">🐭 Mouse triplets</a>: Our model ranks 🏆 1st overall in the MABe 2022 Multi-agent behavior benchmark.</li>
+          <li><a href="#mice">🐭 Mouse triplets</a>: Our model ranks 🏆 1st overall in the MABe 2022 Multi-agent behavior mouse triplets benchmark.</li>
+          <li><a href="#flies">🪰 Fruit Flies</a>: Our model ranks 🏆 1st overall in the MABe 2022 Multi-agent behavior fruit flies benchmark.</li>
           <li><a href="#robots">🤖 Simulated legged robots</a>: We introduce a new dataset of a heterogeneous population of
             quadrupeds traversing different terrains.</li>
           <li><a href="#bandit">🎰 Humans decision making</a>: Learning signatures of decision making from many individuals playing the same game.</li>
@@ -199,6 +200,34 @@ We report the results for our model and other models below. Our model ranks firs
         <b>-</b> Interestingly, we find that the light condition is encoded along the first PC, while the mouse strain is encoded along the second PC.
     </p>
 </section>
+
+<section class="section" id="flies">
+    <h3 class="section-title">
+        🪰 Studying fruit flies
+    </h3>
+
+    The fruit fly groups dataset is the second dataset in the MABe benchmark. It
+    consists of tracking data of a group of 9 to 11 flies interacting in a small dish.
+
+    <p>
+    Precise neural activity manipulations are performed on certain neurons
+which, when activated, induce certain types of behavior including courtship,
+avoidance and female aggression. Additionally, the groups of flies are
+differentiated by various genetic mutations and tagged by sex. This along with
+other behavioral factors provide us with 50 different subtasks, both frame-level
+and sequence-level, that can be use to evaluate the learned representations.</p>
+
+<p> 
+    Our model achieves stateof-the-art performance on the fly dataset. 
+    BAMS outperforms other models on both
+    frame-level and sequence-level sub-tasks, and we
+    note a significant boost in the average frame-level F1
+    score. This result further demonstrates the generalizability of our approach to new 
+    datasets and scaling to an even larger numbers of animals and frames.
+</p>
+
+</section>
+
 <section class="section" id="robots">
     <h3 class="section-title">
         🤖 Studying simulated legged robots
@@ -248,13 +277,12 @@ We report the results for our model and other models below. Our model ranks firs
 If you find this useful for your research, please consider citing our work:
 
 <div class="citation">
-<pre><code>@misc{azabou2023relax,
-      doi = {10.48550/ARXIV.2303.08811},
-      url = {https://arxiv.org/abs/2303.08811},
-      author = {Azabou, Mehdi and Mendelson, Michael and Ahad, Nauman and Sorokin, Maks and Thakoor, Shantanu and Urzay, Carolina and Dyer, Eva L.},
-      title = {Relax, it doesn't matter how you get there: A new self-supervised approach for multi-timescale behavior analysis},
-      publisher = {arXiv},
-      year = {2023}}</code></pre>
+<pre><code>@inproceedings{
+    azabou2023relax,
+    title={Relax, it doesn't matter how you get there: A new self-supervised approach for multi-timescale behavior analysis},
+    author={Azabou, Mehdi and Mendelson, Michael and Ahad, Nauman and Sorokin, Maks and Thakoor, Shantanu and Urzay, Carolina and Dyer, Eva L.},    
+    booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
+    year={2023}}</code></pre>
 </div>
 
 <div class="citation">
